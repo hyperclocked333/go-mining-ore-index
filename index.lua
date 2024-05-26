@@ -3446,3 +3446,4 @@ function Ores:GetInfo(ore: string)
 	--indexed: table
 	return indexed
 end
+return Ores
