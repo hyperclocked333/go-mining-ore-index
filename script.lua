@@ -47,8 +47,7 @@ local char = lp.Character or lp.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 
 warn("fecthing ore library")
-local ores =
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/hyperclocked333/go-mining-ore-index/main/index2.lua"))()
+local ores = loadstring(game:HttpGet("https://raw.githubusercontent.com/hyperclocked333/go-mining-ore-index/main/index.lua"))()
 if ores then
 	warn("fetch successful! (" .. tostring(ores) .. ")")
 end
