@@ -129,7 +129,7 @@ end
 for o: string, amt: number in oresToTarget do
     if GetAmountOwned(o) >= amt then continue end
 	local ore: table = ores:GetInfo(o)
-    print(ore.MaxDepth-ore.MinDepth)
+    -- print(ore.MaxDepth-ore.MinDepth)
     for block: Part, exists: number in pairs(blocks) do
         if exists == 1 and block.Name == o then
             hrp.CFrame = block.CFrame
@@ -138,6 +138,14 @@ for o: string, amt: number in oresToTarget do
         end
     end
 end
+
+blocksPath.ChildAdded:Connect(function(f)
+	if table.find(oresToTarget, f.Name) then
+		hrp.CFrame = block.CFrame
+		task.wait()
+		Mine(block)
+    end
+end)
 --print(ores:GetInfo("Geographite"))
 -- LEGACY CODE BELOW
 
