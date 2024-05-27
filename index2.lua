@@ -3438,7 +3438,6 @@ local Ores = {
 
 };
 function Ores:GetInfo(ore: string)
-	print(ore)
 	local indexed = Ores[ore]
 	if not indexed then
 		return error("ore %s does not exist."):format(ore)
